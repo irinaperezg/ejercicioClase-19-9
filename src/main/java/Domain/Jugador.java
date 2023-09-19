@@ -19,7 +19,8 @@ public class Jugador {
     @Column(name="nombre")
     private String nombre;
 
-    @Column(name="personaje")
+    @OneToOne
+    @JoinColumn(name = "personaje_id", referencedColumnName = "id")
     private Personaje personaje;
 
     public void cambiarPersonaje(Personaje personaje) {
